@@ -14,6 +14,8 @@ function App() {
             No
           </button>
         </div>
+        <img className="w-56 h-56" src="https://imgcdn.sigstick.com/zhgWQIeZORQCPrc73lVO/6.thumb128.png" alt="something's wrong">
+        </img>
       </div>
   );
 }

@@ -3,11 +3,17 @@ import questioning from "../resources/questioning.png"
 import cheering from "../resources/sounds/cheering.mp3"
 import error from "../resources/sounds/error.mp3"
 import teleport from "../resources/sounds/teleport.mp3"
+// import corner from "../resources/corner.gif"
+// import crying_a_lot from "../resources/crying_a_lot.gif"
+// import crying_down from "../resources/crying_down.gif"
+// import crying_up from "../resources/crying_up.gif"
+// import on_the_ground from "../resources/on_the_floor.gif"
 
 function Start() {
   const navigate = useNavigate();
 
-  const noButtonContentArr = ['Nope', 'Not Happenning', 'Just give up', 'Not a chance', 'No way', 'Click \'Yes\'']
+  const noButtonContentArr = ['Nope', 'Not Happenning', 'Just give up', 'Not a chance', 'No way', 'Click \'Yes\''];
+//   const noButtonGifArr = [questioning, corner, crying_a_lot, crying_down, crying_up, on_the_ground];
 
   const cheeringSound = new Audio(cheering);
   const errorSound = new Audio(error);

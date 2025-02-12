@@ -18,7 +18,7 @@ function Yes() {
             </button>
         </div>
         <div className="font-bold text-4xl text-red-700">
-          Yay!
+          I know you would say yes! You'll receive your present soon!
         </div>
         <img className="w-56 h-56" src={throwingHearts} alt="usagyuuun throwing hearts">
         </img>

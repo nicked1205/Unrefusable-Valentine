@@ -10,7 +10,8 @@ function Yes() {
     };
 
     const loc = useLocation();
-    const value = loc.state?.value || "No value provided";
+    const params = new URLSearchParams(loc.search);
+    const value = atob(params.get("value"));
 
   return (
     <Background>

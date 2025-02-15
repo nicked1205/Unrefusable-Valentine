@@ -13,7 +13,8 @@ import Background from '../components/background';
 function Choice() {
   const navigate = useNavigate();
   const loc = useLocation();
-  const value = loc.state?.value || "No value provided";
+  const params = new URLSearchParams(loc.search);
+  const value = params.get("value");
 
   const noButtonContentArr = ['Nope', 'Not Happenning', 'Just give up', 'Not a chance', 'No way', 'Click \'Yes\''];
 //   const noButtonGifArr = [questioning, corner, crying_a_lot, crying_down, crying_up, on_the_ground];
@@ -25,7 +26,7 @@ function Choice() {
   var noCount = 0;
 
   const handleClickYes = () => {
-    navigate("/yes", { state: { value: value } });
+    navigate(`/yes?value=${value}`);
     cheeringSound.play();
     setTimeout(() => {
         document.getElementById("back-btn").style.display = "block";

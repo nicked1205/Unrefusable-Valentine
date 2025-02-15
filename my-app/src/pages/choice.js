@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import questioning from "../resources/questioning.png"
 import cheering from "../resources/sounds/cheering.mp3"
 import error from "../resources/sounds/error.mp3"
@@ -8,9 +8,12 @@ import teleport from "../resources/sounds/teleport.mp3"
 // import crying_down from "../resources/crying_down.gif"
 // import crying_up from "../resources/crying_up.gif"
 // import on_the_ground from "../resources/on_the_floor.gif"
+import Background from '../components/background';
 
-function Start() {
+function Choice() {
   const navigate = useNavigate();
+  const loc = useLocation();
+  const value = loc.state?.value || "No value provided";
 
   const noButtonContentArr = ['Nope', 'Not Happenning', 'Just give up', 'Not a chance', 'No way', 'Click \'Yes\''];
 //   const noButtonGifArr = [questioning, corner, crying_a_lot, crying_down, crying_up, on_the_ground];
@@ -22,7 +25,7 @@ function Start() {
   var noCount = 0;
 
   const handleClickYes = () => {
-    navigate('/yes');
+    navigate("/yes", { state: { value: value } });
     cheeringSound.play();
     setTimeout(() => {
         document.getElementById("back-btn").style.display = "block";
@@ -106,9 +109,7 @@ function Start() {
   };
 
   return (
-    <div
-        className="flex flex-col items-center justify-center h-screen bg-pink-200"
-      >
+    <Background>
         <div className="font-bold text-4xl text-red-700">
           Will you be my valentine?
         </div>
@@ -122,8 +123,8 @@ function Start() {
         </div>
         <img className="w-56 h-56" src={questioning} alt="something's wrong">
         </img>
-      </div>
+      </Background>
   );
 }
 
-export default Start;
+export default Choice;

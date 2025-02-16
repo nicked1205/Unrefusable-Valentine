@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Background from "../components/background";
+import success from "../resources/sounds/success.mp3";
+import error from "../resources/sounds/error.mp3";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+
+  const successSound = new Audio(success);
+  const errorSound = new Audio(error);
 
   function containsEmoji(str) {
     const emojiRegex = /[\p{Emoji}]/u;
@@ -17,7 +22,10 @@ function Home() {
 
   const handleSubmit = () => {
     if (!containsEmoji(inputValue) && !containsHTML(inputValue)) {   
-      navigate(`/choice?value=${btoa(inputValue)}`);
+      successSound.play();
+      navigate(`/success?value=${btoa(inputValue)}`);
+    } else {
+      errorSound.play();
     }
   };
 

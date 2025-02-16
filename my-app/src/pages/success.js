@@ -25,7 +25,6 @@ function Success() {
 
     function handleCopy() {
       const resultDiv = document.getElementById("result");
-      alert(destination)
       navigator.clipboard.writeText(domain + destination);
       resultDiv.textContent = "Link copied!";
     }

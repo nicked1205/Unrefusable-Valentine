@@ -5,7 +5,7 @@ import Background from '../components/background';
 function Yes() {
     const navigate = useNavigate();
     const currentLocation = window.location.href;
-    const destination = `/choice${currentLocation.split("success")[1]}`
+    const destination = `/choice${currentLocation.split("/yes")[1]}`
 
     const handleClickBack = () => {
         navigate(destination);

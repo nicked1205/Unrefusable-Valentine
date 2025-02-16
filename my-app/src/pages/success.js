@@ -11,7 +11,10 @@ function Success() {
       text: "Invite your special someone to be your Valentine! (they can't say no)",
       url: destination,
     };
-
+    
+    const handleClickBack = () => {
+        navigate('/');
+    }
 
     async function handleShare() {
       const resultDiv = document.getElementById("result");
@@ -46,7 +49,7 @@ function Success() {
         <p id="result"  className="text-red-700 text-sm mt-6">
         </p>
         <div className='fixed left-0 top-0'>
-            <button className="text-red-700 underline px-4 py-2 rounded hover:text-red-500 duration-200" onClick={navigate('/')}>
+            <button className="text-red-700 underline px-4 py-2 rounded hover:text-red-500 duration-200" onClick={handleClickBack}>
                 Back
             </button>
         </div>

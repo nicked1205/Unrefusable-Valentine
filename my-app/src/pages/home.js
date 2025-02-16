@@ -20,8 +20,12 @@ function Home() {
     return /<\/?[^>]+(>|$)/.test(str);
   }
 
+  function isEmpty(str) {
+    return !inputValue.trim()
+  }
+
   const handleSubmit = () => {
-    if (!containsEmoji(inputValue) && !containsHTML(inputValue)) {   
+    if (!containsEmoji(inputValue) && !containsHTML(inputValue) && !isEmpty(inputValue)) {	   
       successSound.play();
       navigate(`/success?value=${btoa(inputValue)}`);
     } else {
@@ -54,6 +58,11 @@ function Home() {
       {containsHTML(inputValue) && (
         <div className="text-red-700 text-sm">
           It seems your input contains HTML tags, you're not exploiting this page right? 😅
+        </div>
+      )}
+      {isEmpty(inputValue) && (
+        <div className="text-red-700 text-sm">
+          You can't leave this empty! 😢
         </div>
       )}
       <button className="text-red-700 underline px-4 py-2 rounded" onClick={handleSubmit}>Start</button>

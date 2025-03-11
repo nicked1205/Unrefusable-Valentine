@@ -48,11 +48,6 @@ Make sure you have:
 - Edit `choice.js` to change button behavior.
 - Refer to TailwindCSS to modify appearance
 
-
-## 📜 License
-
-This project is licensed under the MIT License – feel free to spread the love! 💌
-
 ## 🎁 Special Note
 
 If this project helps you get a Valentine... **you owe me chocolate! 🍫😂**
